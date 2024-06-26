@@ -1,0 +1,199 @@
+/* Reset some default browser styles */
+body, h1, h2, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+}
+
+/* Header styling */
+header {
+    background: transparent;
+    color: #ffffff;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+header nav ul li {
+    margin: 0 1rem;
+}
+
+header nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.7rem;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0); /* adds shadow to the text */
+    font-family: 'Times New Roman', Times, serif;
+
+
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Hero section styling */
+.hero {
+    background-image: url('anime-background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    padding: 0 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 100px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    animation: slideIn 1s ease-out forwards;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0); /* adds shadow to the text */
+    font-family: 'Times New Roman', Times, serif;
+    padding-top: 80px;    /* padding on the top */
+    text-shadow: 1px 1px 0 #ccc, 2px 2px 0 #c9c9c9, 3px 3px 0 #bbb, 4px 4px 0 #b9b9b9, 5px 5px 0 #aaa, 6px 6px 0 #999, 7px 7px 0 #888, 8px 8px 0 #777, 9px 9px 0 #666, 10px 10px 0 #555;
+    padding-bottom: 100px; /* padding on the bottom */
+    
+   
+}
+
+h2 {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    animation: slideIn 1.5s ease-out forwards;
+    padding-top: 2px;    /* padding on the top */
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    padding-bottom: 250px; /* padding on the bottom */
+    text-shadow: 2px 2px 5px rgb(0, 0, 0); /* adds shadow to the text */
+    
+}
+
+p {
+    font-size: 12px;
+    margin-bottom: 20px;
+    animation: slideIn 2s ease-out forwards;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: slideIn 2.5s ease-out forwards;
+}
+footer{
+background-color: transparent;
+}
+
+input[type="email"] {
+    padding: 25px;
+    border: none;
+    font-size: 15px;
+    border-radius: 27px;
+    width: 100%;
+    margin-bottom: 10px;
+    max-width: 167px;
+    
+}
+
+button {
+    background-color: #000000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #d92525;
+}
+
+/* Footer styling */
+footer {
+    background:transparent;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    input[type="email"] {
+        width: 80%;
+    }
+
+    button {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    header nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .hero {
+        padding: 0 10px;
+    }
+
+    input[type="email"] {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+}
