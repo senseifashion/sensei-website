@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sensei fashion - Coming Soon!</title>
+    <title>Sensei Fashion - Coming Soon!</title>
     <link rel="stylesheet" href="style.css">
     <style>
         /* Additional styles for the video */
@@ -26,6 +26,10 @@
             z-index: 1;
             color: white;
             text-align: center;
+        }
+        #countdown {
+            font-size: 2em;
+            margin: 20px 0;
         }
     </style>
 </head>
@@ -50,6 +54,7 @@
             <div class="container">
                 <h1>Sensei Fashion</h1>
                 <h2>Launching soon</h2>
+                <div id="countdown"></div>
                 <form>
                     <input type="email" placeholder="Enter your email address">
                     <button>Notify Me</button>
@@ -61,6 +66,33 @@
         <p class="footers">&copy; 2023 AnimeWear. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        function startCountdown(endTime) {
+            const countdownElement = document.getElementById('countdown');
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = endTime - now;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+                if (distance < 0) {
+                    clearInterval(interval);
+                    countdownElement.innerHTML = "Time's up!";
+                }
+            }
+
+            const interval = setInterval(updateCountdown, 1000);
+            updateCountdown();
+        }
+
+        const countdownDate = new Date("2024-12-31T23:59:59").getTime();
+        startCountdown(countdownDate);
+    </script>
 </body>
 </html>
